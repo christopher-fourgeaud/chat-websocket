@@ -13,8 +13,7 @@ app.use(express.static('public'));
 //Action sur la connection
 io.on('connection', function(socket){
     socket.on('chat message', function(msg){
-        io.emit('chat message', msg);
-        console.log(encode(msg));
+        io.emit('chat message', ent.encode(msg));
     })
     console.log(encode('hello', { special: { l: true } }));
     console.log(encode('hello', { special: { l: true } }));
